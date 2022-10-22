@@ -6,7 +6,7 @@ img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
 
 # mengkonversi ke grayscale
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-thresholder = 157
+thresholder = 200
 
 # mengkonversi ke b&w dengan numpy
 row = len(gray_img)
