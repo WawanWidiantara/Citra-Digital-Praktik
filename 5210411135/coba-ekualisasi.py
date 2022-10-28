@@ -21,12 +21,12 @@ def normalisasi(channel, ks=np.zeros(256)):
 
 
 def ekualisasi(channel):
-    n = deepcopy(normalisasi(channel))
+    p = deepcopy(normalisasi(channel))
     c = deepcopy(channel)
     for i in range(len(c)):
         for j in range(len(c[0])):
-            px_b = c[i, j]
-            c[i, j] = ((len(c) * len(c[0])) - 1) * sum(n[0 : px_b + 1])
+            px = c[i, j]
+            c[i, j] = round(((len(c) * len(c[0])) - 1) * sum(p[0 : px + 1]))
     return normalisasi(c)
 
 
