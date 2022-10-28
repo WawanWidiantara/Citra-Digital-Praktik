@@ -11,7 +11,7 @@ b, r, g = cv2.split(img)
 # rgb to grayscale package bawaan
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# buat array kosong untuk tempat normalisasi
+# buat array kosong 1D untuk tempat normalisasi
 his_b = np.zeros(256)  # channel blue
 his_r = np.zeros(256)  # channel red
 his_g = np.zeros(256)  # channel green
@@ -25,7 +25,7 @@ column = len(b[0])
 for i in range(row):  # perulangan untuk row
     for j in range(column):  # perulangan untuk column
         # blue
-        px_b = b[i, j]  # membaca tiap pixel
+        px_b = b[i, j]  # membaca tiap pixel pada channel
         his_b[px_b] += 1 / (row * column)  # menghitung peluang pixel yang muncul
         # red
         px_r = r[i, j]
