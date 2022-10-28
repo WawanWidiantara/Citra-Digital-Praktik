@@ -1,7 +1,7 @@
 def ekualisasi(arr):
     sumV = 0
     for i in range(len(arr)):
-        sumV = sumV + arr[i]
+        sumV += arr[i]
         arr[i] = round(sumV * (len(arr)-1))
     return arr
 
