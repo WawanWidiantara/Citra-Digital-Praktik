@@ -2,11 +2,11 @@ import cv2
 import numpy as np
 
 # membaca gambar
-img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+img = cv2.imread("D:/Citra Digital Praktik/responsi/uang 100rb - 4.jpg")
 
 # mengkonversi ke grayscale
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-thresholder = 200
+thresholder = 160
 
 # mengkonversi ke b&w dengan numpy
 row = len(gray_img)
