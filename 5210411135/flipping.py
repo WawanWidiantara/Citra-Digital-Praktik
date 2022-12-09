@@ -19,7 +19,7 @@ if hor == True:
     cvflip = cv2.flip(cvimg, 1)
 if ver == True:
     cvflip = cv2.flip(cvimg, 0)
-cv2.imshow("translasi opencv", cvflip)
+cv2.imshow("flipping opencv", cvflip)
 cvend = time.time()
 
 # manual
@@ -29,8 +29,8 @@ for i in range(len(img)):
         if hor == True:
             newImg[i, column - 1 - j] = img[i, j]
         if ver == True:
-            newImg[row - 1 - i,j] = img[i,j]
-cv2.imshow("translasi manual", newImg)
+            newImg[row - 1 - i, j] = img[i, j]
+cv2.imshow("flipping manual", newImg)
 mnend = time.time()
 
 cv2.waitKey()
