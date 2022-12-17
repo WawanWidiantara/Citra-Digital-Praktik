@@ -1,38 +1,39 @@
 import cv2
 import numpy as np
+import time
 import math
 
 # membaca gambar
 img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
-newImg = np.uint8(np.zeros((len(img), len(img[0]), 3)))
+cvimg = img.copy()
 
-def rotate(derajat, wrap=False):
-    t = math.radians((derajat))
-    cos,sin = (math.cos(t), math.sin(t))
-    cx,cy = (len(img)//2, len(img[0])//2)
+row, column = img.shape[:2]
+newImg = np.zeros(((row,column,3))).astype(np.uint8)
 
-    r = int(abs(len(img) * cos) + abs(len(img[0]) * sin)) 
-    c = int(abs(len(img) * sin) + abs(len(img[0]) * cos)) 
-    xs = round((r - len(img))//2)
-    ys = round((c - len(img[0]))//2)
-    
-    affine = np.uint8(np.zeros((r, c, 3)))
-    for i in range(len(img)):
-        for j in range(len(img[0])):
-            x = round(cx + (i-cx) * cos - (j-cy) * sin)
-            y = round(cy + (i-cx) * sin + (j-cy) * cos)
+derajat = 45
+t = math.radians((derajat))
+cos,sin = (math.cos(t), math.sin(t))
+
+cx,cy = (row//2, column//2)
+
+# opencv
+cvstart = time.time()
+rotM = cv2.getRotationMatrix2D((cx,cy), -derajat, 1)
+cvRot = cv2.warpAffine(cvimg, rotM, (column,row))
+cv2.imshow('rotate opencv', cvRot)
+cvend = time.time()
+
+# manual
+mnstart = time.time()
+for i in range(row):
+    for j in range(column):
+        x = round(cx + (i-cx) * cos - (j-cy) * sin)
+        y = round(cy + (i-cx) * sin + (j-cy) * cos)
             
-            if (0 <= x < len(img))and(0 <= y < len(img[0])):
-                newImg[x,y] = img[i,j]
-            affine[x+xs,y+ys] = img[i,j]
-        
-    # if wrap == True:
-    return affine
-    # else:
-    # return newImg
-
-         
-cv2.imshow("original", img)
-cv2.imshow("bagi", rotate(80))
+        if (0 <= x < row)and(0 <= y < column):
+            newImg[i,j] = img[x,y]         
+cv2.imshow("ratate", newImg)
+mnend = time.time()
 
 cv2.waitKey()
+print(f"opencv \t:{cvend - cvstart}\nmanual \t:{mnend - mnstart}")
