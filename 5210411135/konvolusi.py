@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import time
 
 # membaca gambar
 ori = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
