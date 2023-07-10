@@ -6,7 +6,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # read image (soal 1 {unduh gambar})
-img = cv2.imread("D:/Citra Digital Praktik/responsi/uang 100rb - 4.jpg")
+img = cv2.imread("D:/Code/py_code/Citra-Digital-Praktik/responsi/uang 100rb - 4.jpg")
 
 # split img sesuai channel warna
 b, g, r = img[:, :, 0], img[:, :, 1], img[:, :, 2]

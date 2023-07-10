@@ -6,7 +6,7 @@ import math
 
 # %% flipping
 # membaca gambar
-img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+img = cv2.imread("D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg")
 cvimg = img.copy()
 
 row, column = img.shape[:2]
@@ -41,7 +41,7 @@ cv2.waitKey()
 
 # %% scaling
 # membaca gambar
-img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+img = cv2.imread("D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg")
 cvimg = img.copy()
 
 row, column = img.shape[:2]
@@ -69,7 +69,7 @@ cv2.waitKey()
 
 # %% translasi
 # membaca gambar
-img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+img = cv2.imread("D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg")
 cvimg = img.copy()
 
 row, column = img.shape[:2]
@@ -99,7 +99,7 @@ cv2.waitKey()
 
 # %% rotate
 # membaca gambar
-img = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+img = cv2.imread("D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg")
 cvimg = img.copy()
 
 row, column = img.shape[:2]
@@ -133,7 +133,7 @@ mnend = time.time()
 cv2.waitKey()
 
 # %% konvolusi
-ori = cv2.imread("D:/Citra Digital Praktik/5210411135/image/fruit.jpg")
+ori = cv2.imread("D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg")
 row, column = ori.shape[:2]
 
 img = np.zeros(((row + 2, column + 2, 3))).astype(np.uint8)
@@ -166,7 +166,7 @@ cv2.imshow("konvolusi", newImg)
 cv2.waitKey()
 
 # %% edge detect
-img = cv2.imread('D:/Citra Digital Praktik/5210411135/image/fruit.jpg')
+img = cv2.imread('D:\Code\py_code\Citra-Digital-Praktik/5210411135\image/fruit.jpg')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 row, col = img.shape[:2]
 
